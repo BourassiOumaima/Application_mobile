@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/roleLayout"
+        android:src="@drawable/bleu2"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vous serez le plus proche"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/textViewSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C'est gratuit !"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/textViewTitle"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Section "Vous êtes" -->
+    <LinearLayout
+        android:id="@+id/roleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewSubtitle"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textViewRoleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vous êtes :"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/radioButtonRecruiter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recruteur"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonCandidate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Candidat"/>
+            </LinearLayout>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <!-- Section "E-mail" -->
+    <LinearLayout
+        android:id="@+id/emailLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/roleLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textViewEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-mail :"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/border"
+            android:hint="Votre adresse e-mail..."
+            android:inputType="textEmailAddress"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Section "Ville" -->
+    <LinearLayout
+        android:id="@+id/cityLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/emailLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="90dp">
+
+        <TextView
+            android:id="@+id/textViewCityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ville :"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <Spinner
+            android:id="@+id/spinnerCity"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="140dp"
+            android:background="@drawable/border"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"/>
+    </LinearLayout>
+
+    <!-- Section "Mot de passe" -->
+    <LinearLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/cityLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewPasswordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mot de passe :"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border"
+                android:hint="Votre mot de passe..."
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:layout_marginEnd="75dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewPasswordHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[au moins 5 caractères]Choisissez un mot de passe qui n'est pas facile à deviner"
+            android:textSize="12sp"
+            android:layout_marginStart="100dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="93dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/separateur" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmer le mot de"
+                android:textSize="18sp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:hint="Choisissez un mot de passe..."
+                android:inputType="textPassword"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="passe:"
+            android:textSize="18sp"
+            android:layout_marginStart="100dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/passwordLayout"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="#005C96">
+
+        <!-- TextView -->
+        <TextView
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"
+            android:text="En validant mon inscription,j'accepte les conditions générales d'utilisation du site alkhad.ma"
+            android:textColor="@android:color/white" />
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/buttonCreateAccount"
+            android:layout_width="95dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border"
+            android:backgroundTint="@android:color/black"
+            android:text="CREER UN COMPTE!"
+            android:textColor="@android:color/white"
+            android:onClick="onClick"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
